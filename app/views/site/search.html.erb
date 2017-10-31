@@ -1,0 +1,15 @@
+<h1>Find Music</h1>
+<div class="form">
+  <%= form_tag site_search_path do %>
+  <%= search_field_tag :term %>
+  <%= submit_tag "Go!" %>
+  <% end %>
+
+  <% if @results.empty? %>
+  Try your search again.
+  <% else %>
+  <% @results.each do |result| %>
+  <p><%= link_to result.name, result %></p>
+  <% end %>
+  <% end %>
+<div>
